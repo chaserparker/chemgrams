@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <meta name="description" content="Use elements from the periodic table to spell words and phrases. p.s. u cute">
+        <title>ChemGrams</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Numans&display=swap');
+            </style>
+    </head>
+
+    <body>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <div id="data-block" class="block">
+                <div class="graph">Test</div>
+                  <div class="graph-info">Sulfur (S) is the most common element in the English language.</div>
+              </div>
+              <div id="word-block" class="block">
+              </div>
+              <div id="info-block" class="block">
+                  <span id="elem-info"></span>
+                  <span id="elem-picture"></span>
+              </div>
+            </div>
+          </div>
+        <div id="display-spell"></div>
+        <div class="introduction-animation">
+            <div class="intro" id="intro"></div>
+            <div class= "intro_text" id="intro_text"></div>
+            <div class="rainbow-elements">
+                <span class="intro-c">
+                    <div class="intro-number">6</div>
+                    <div class="intro-symbol">C</div>
+                    <div class="intro-element">Carbon</div>
+                </span>
+                <span class="intro-he">
+                    <div class="intro-number">2</div>
+                    <div class="intro-symbol">He</div>
+                    <div class="intro-element">Helium</div>
+                </span>
+                <span class="intro-mg">
+                    <div class="intro-number">12</div>
+                    <div class="intro-symbol">Mg</div>
+                    <div class="intro-element">Magnesium</div>
+                </span>
+                <span class="intro-ra">
+                    <div class="intro-number">88</div>
+                    <div class="intro-symbol">Ra</div>
+                    <div class="intro-element">Radium</div>
+                </span>
+                <span class="intro-m">
+                    <div class="intro-number">-</div>
+                    <div class="intro-symbol">m</div>
+                    <div class="intro-element">mass</div>
+                </span>
+                <span class="intro-s">
+                    <div class="intro-number">16</div>
+                    <div class="intro-symbol">S</div>
+                    <div class="intro-element">Sulfur</div>
+                </span>
+            </div>
+            <div class="entry-message-position">
+                <div class="intro_split">
+                    <span>C</span>
+                    <span>he</span>
+                    <span>mG</span>
+                    <span>ra</span>
+                    <span>m</span>
+                    <span>s</span>
+                </div>
+            </div>
+        </div>
+        <div class="entry-bar">
+            <span class="form__group field">
+                <input type="input" class="form__field" placeholder="Message" id='dynamic-spell' autocomplete="off">
+            </span>
+            <span>
+                <button class="button" id="enter"><span>Spell </span></button>
+                <button class="button" id="random"><span>Random </span></button>
+            </span>
+        </div>
+        <div>
+            <table class="ptable"> 
+                            <tbody>
+                                <tr>
+                                    <td id="H" class="non-metal" onclick="dynamicDisplay('H')">
+                                        <div class="number">
+                                            1
+                                        </div>
+                                        <div class="symbol">
+                                            H
+                                        </div>
+                                        <div class="element">
+                                            Hydrogen
+                                        </div>
+                                    </td>
+                                    <td colspan="16"></td>
+                                    <td id="He" class="noble-gas" onclick="dynamicDisplay('He')">
+                                        <div class="number">
+                                            2
+                                        </div>
+                                        <div class="symbol">
+                                            He
+                                        </div>
+                                        <div class="element">
+                                            Helium
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td id="Li" class="alkali" onclick="dynamicDisplay('Li')">
+                                        <div class="number">
+                                            3
+                                        </div>
+                                        <div class="symbol">
+                                            Li
+                                        </div>
+                                        <div class="element">
+                                            Lithium
+                                        </div>
+                                    </td>
+                                    <td id="Be" class="alkaline" onclick="dynamicDisplay('Be')">
+                                        <div class="number">
+                                            4
+                                        </div>
+                                        <div class="symbol">
+                                            Be
+                                        </div>
+                                        <div class="element">
+                                            Beryllium
+                                        </div>
+                                    </td>
+                                    <td colspan="10"></td>
+                                    <td id="B" class="non-metal" onclick="dynamicDisplay('B')">
+                                        <div class="number">
+                                            5
+                                        </div>
+                                        <div class="symbol">
+                                            B
+                                        </div>
+                                        <div class="element">
+                                            Boron
+                                        </div>
+                                    </td>
+                                    <td id="C" class="non-metal" onclick="dynamicDisplay('C')">
+                                        <div class="number">
+                                            6
+                                        </div>
+                                        <div class="symbol">
+                                            C
+                                        </div>
+                                        <div class="element">
+                                            Carbon
+                                        </div>
+                                    </td>
+                                    <td id="N" class="non-metal" onclick="dynamicDisplay('N')">
+                                        <div class="number">
+                                            7
+                                        </div>
+                                        <div class="symbol">
+                                            N
+                                        </div>
+                                        <div class="element">
+                                            Nitrogen
+                                        </div>
+                                    </td>
+                                    <td id="O" class="non-metal" onclick="dynamicDisplay('O')">
+                                        <div class="number">
+                                            8
+                                        </div>
+                                        <div class="symbol">
+                                            O
+                                        </div>
+                                        <div class="element">
+                                            Oxygen
+                                        </div>
+                                    </td>
+                                    <td id="F" class="halogen" onclick="dynamicDisplay('F')">
+                                        <div class="number">
+                                            9
+                                        </div>
+                                        <div class="symbol">
+                                            F
+                                        </div>
+                                        <div class="element">
+                                            Fluorine
+                                        </div>
+                                    </td>
+                                    <td id="Ne" class="noble-gas" onclick="dynamicDisplay('Ne')">
+                                        <div class="number">
+                                            10
+                                        </div>
+                                        <div class="symbol">
+                                            Ne
+                                        </div>
+                                        <div class="element">
+                                            Neon
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td id="Na" class="alkali" onclick="dynamicDisplay('Na')">
+                                        <div class="number">
+                                            11
+                                        </div>
+                                        <div class="symbol">
+                                            Na
+                                        </div>
+                                        <div class="element">
+                                            Sodium
+                                        </div>
+                                    </td>
+                                    <td id="Mg" class="alkaline" onclick="dynamicDisplay('Mg')">
+                                        <div class="number">
+                                            12
+                                        </div>
+                                        <div class="symbol">
+                                            Mg
+                                        </div>
+                                        <div class="element">
+                                            Magnesium
+                                        </div>
+                                    </td>
+                                    <td colspan="10"></td>
+                                    <td id="Al" class="other-metal" onclick="dynamicDisplay('Al')">
+                                        <div class="number">
+                                            13
+                                        </div>
+                                        <div class="symbol">
+                                            Al
+                                        </div>
+                                        <div class="element">
+                                            Aluminum
+                                        </div>
+                                    </td>
+                                    <td id="Si" class="non-metal" onclick="dynamicDisplay('Si')">
+                                        <div class="number">
+                                            14
+                                        </div>
+                                        <div class="symbol">
+                                            Si
+                                        </div>
+                                        <div class="element">
+                                            Silicon
+                                        </div>
+                                    </td>
+                                    <td id="P" class="non-metal" onclick="dynamicDisplay('P')">
+                                        <div class="number">
+                                            15
+                                        </div>
+                                        <div class="symbol">
+                                            P
+                                        </div>
+                                        <div class="element">
+                                            Phosphorus
+                                        </div>
+                                    </td>
+                                    <td id="S" class="non-metal" onclick="dynamicDisplay('S')">
+                                        <div class="number">
+                                            16
+                                        </div>
+                                        <div class="symbol">
+                                            S
+                                        </div>
+                                        <div class="element">
+                                            Sulfur
+                                        </div>
+                                    </td>
+                                    <td id="Cl" class="halogen" onclick="dynamicDisplay('Cl')">
+                                        <div class="number">
+                                            17
+                                        </div>
+                                        <div class="symbol">
+                                            Cl
+                                        </div>
+                                        <div class="element">
+                                            Chlorine
+                                        </div>
+                                    </td>
+                                    <td id="Ar" class="noble-gas" onclick="dynamicDisplay('Ar')">
+                                        <div class="number">
+                                            18
+                                        </div>
+                                        <div class="symbol">
+                                            Ar
+                                        </div>
+                                        <div class="element">
+                                            Argon
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td id="K" class="alkali" onclick="dynamicDisplay('K')">
+                                        <div class="number">
+                                            19
+                                        </div>
+                                        <div class="symbol">
+                                            K
+                                        </div>
+                                        <div class="element">
+                                            Potassium
+                                        </div>
+                                    </td>
+                                    <td id="Ca" class="alkaline" onclick="dynamicDisplay('Ca')">
+                                        <div class="number">
+                                            20
+                                        </div>
+                                        <div class="symbol">
+                                            Ca
+                                        </div>
+                                        <div class="element">
+                                            Calcium
+                                        </div>
+                                    </td>
+                                    <td id="Sc" class="transition-metal" onclick="dynamicDisplay('Sc')">
+                                        <div class="number">
+                                            21
+                                        </div>
+                                        <div class="symbol">
+                                            Sc
+                                        </div>
+                                        <div class="element">
+                                            Scandium
+                                        </div>
+                                    </td>
+                                    <td id="Ti" class="transition-metal" onclick="dynamicDisplay('Ti')">
+                                        <div class="number">
+                                            22
+                                        </div>
+                                        <div class="symbol">
+                                            Ti
+                                        </div>
+                                        <div class="element">
+                                            Titanium
+                                        </div>
+                                    </td>
+                                    <td id="V" class="transition-metal" onclick="dynamicDisplay('V')">
+                                        <div class="number">
+                                            23
+                                        </div>
+                                        <div class="symbol">
+                                            V
+                                        </div>
+                                        <div class="element">
+                                            Vanadium
+                                        </div>
+                                    </td>
+                                    <td id="Cr" class="transition-metal" onclick="dynamicDisplay('Cr')">
+                                        <div class="number">
+                                            24
+                                        </div>
+                                        <div class="symbol">
+                                            Cr
+                                        </div>
+                                        <div class="element">
+                                            Chromium
+                                        </div>
+                                    </td>
+                                    <td id="Mn" class="transition-metal" onclick="dynamicDisplay('Mn')">
+                                        <div class="number">
+                                            25
+                                        </div>
+                                        <div class="symbol">
+                                            Mn
+                                        </div>
+                                        <div class="element">
+                                            Manganese
+                                        </div>
+                                    </td>
+                                    <td id="Fe" class="transition-metal" onclick="dynamicDisplay('Fe')">
+                                        <div class="number">
+                                            26
+                                        </div>
+                                        <div class="symbol">
+                                            Fe
+                                        </div>
+                                        <div class="element">
+                                            Iron
+                                        </div>
+                                    </td>
+                                    <td id="Co" class="transition-metal" onclick="dynamicDisplay('Co')">
+                                        <div class="number">
+                                            27
+                                        </div>
+                                        <div class="symbol">
+                                            Co
+                                        </div>
+                                        <div class="element">
+                                            Cobalt
+                                        </div>
+                                    </td>
+                                    <td id="Ni" class="transition-metal" onclick="dynamicDisplay('Ni')">
+                                        <div class="number">
+                                            28
+                                        </div>
+                                        <div class="symbol">
+                                            Ni
+                                        </div>
+                                        <div class="element">
+                                            Nickel
+                                        </div>
+                                    </td>
+                                    <td id="Cu" class="transition-metal" onclick="dynamicDisplay('Cu')">
+                                        <div class="number">
+                                            29
+                                        </div>
+                                        <div class="symbol">
+                                            Cu
+                                        </div>
+                                        <div class="element">
+                                            Copper
+                                        </div>
+                                    </td>
+                                    <td id="Zn" class="transition-metal" onclick="dynamicDisplay('Zn')">
+                                        <div class="number">
+                                            30
+                                        </div>
+                                        <div class="symbol">
+                                            Zn
+                                        </div>
+                                        <div class="element">
+                                            Zinc
+                                        </div>
+                                    </td>
+                                    <td id="Ga" class="other-metal" onclick="dynamicDisplay('Ga')">
+                                        <div class="number">
+                                            31
+                                        </div>
+                                        <div class="symbol">
+                                            Ga
+                                        </div>
+                                        <div class="element">
+                                            Gallium
+                                        </div>
+                                    </td>
+                                    <td id="Ge" class="other-metal" onclick="dynamicDisplay('Ge')">
+                                        <div class="number">
+                                            32
+                                        </div>
+                                        <div class="symbol">
+                                            Ge
+                                        </div>
+                                        <div class="element">
+                                            Germanium
+                                        </div>
+                                    </td>
+                                    <td id="As" class="non-metal" onclick="dynamicDisplay('As')">
+                                        <div class="number">
+                                            33
+                                        </div>
+                                        <div class="symbol">
+                                            As
+                                        </div>
+                                        <div class="element">
+                                            Arsenic
+                                        </div>
+                                    </td>
+                                    <td id="Se" class="non-metal" onclick="dynamicDisplay('Se')">
+                                        <div class="number">
+                                            34
+                                        </div>
+                                        <div class="symbol">
+                                            Se
+                                        </div>
+                                        <div class="element">
+                                            Selenium
+                                        </div>
+                                    </td>
+                                    <td id="Br" class="halogen" onclick="dynamicDisplay('Br')">
+                                        <div class="number">
+                                            35
+                                        </div>
+                                        <div class="symbol">
+                                            Br
+                                        </div>
+                                        <div class="element">
+                                            Bromine
+                                        </div>
+                                    </td>
+                                    <td id="Kr" class="noble-gas" onclick="dynamicDisplay('Kr')">
+                                        <div class="number">
+                                            36
+                                        </div>
+                                        <div class="symbol">
+                                            Kr
+                                        </div>
+                                        <div class="element">
+                                            Krypton
+                                        </div>
+                                    </td>
+                                </tr>                                
+                                <tr>
+                                    <td id="Rb" class="alkali" onclick="dynamicDisplay('Rb')">
+                                        <div class="number">
+                                            37
+                                        </div>
+                                        <div class="symbol">
+                                            Rb
+                                        </div>
+                                        <div class="element">
+                                            Rubidium
+                                        </div>
+                                    </td>
+                                    <td id="Sr" class="alkaline" onclick="dynamicDisplay('Sr')">
+                                        <div class="number">
+                                            38
+                                        </div>
+                                        <div class="symbol">
+                                            Sr
+                                        </div>
+                                        <div class="element">
+                                            Strontium
+                                        </div>
+                                    </td>
+                                    <td id="Y" class="transition-metal" onclick="dynamicDisplay('Y')">
+                                        <div class="number">
+                                            39
+                                        </div>
+                                        <div class="symbol">
+                                            Y
+                                        </div>
+                                        <div class="element">
+                                            Yttrium
+                                        </div>
+                                    </td>
+                                    <td id="Zr" class="transition-metal" onclick="dynamicDisplay('Zr')">
+                                        <div class="number">
+                                            40
+                                        </div>
+                                        <div class="symbol">
+                                            Zr
+                                        </div>
+                                        <div class="element">
+                                            Zirconium
+                                        </div>
+                                    </td>
+                                    <td id="Nb" class="transition-metal" onclick="dynamicDisplay('Nb')">
+                                        <div class="number">
+                                            41
+                                        </div>
+                                        <div class="symbol">
+                                            Nb
+                                        </div>
+                                        <div class="element">
+                                            Niobium
+                                        </div>
+                                    </td>
+                                    <td id="Mo" class="transition-metal" onclick="dynamicDisplay('Mo')">
+                                        <div class="number">
+                                            42
+                                        </div>
+                                        <div class="symbol">
+                                            Mo
+                                        </div>
+                                        <div class="element">
+                                            Molybdenum
+                                        </div>
+                                    </td>
+                                    <td id="Tc" class="transition-metal" onclick="dynamicDisplay('Tc')">
+                                        <div class="number">
+                                            43
+                                        </div>
+                                        <div class="symbol">
+                                            Tc
+                                        </div>
+                                        <div class="element">
+                                            Technetium
+                                        </div>
+                                    </td>
+                                    <td id="Ru" class="transition-metal" onclick="dynamicDisplay('Ru')">
+                                        <div class="number">
+                                            44
+                                        </div>
+                                        <div class="symbol">
+                                            Ru
+                                        </div>
+                                        <div class="element">
+                                            Ruthenium
+                                        </div>
+                                    </td>
+                                    <td id="Rh" class="transition-metal" onclick="dynamicDisplay('Rh')">
+                                        <div class="number">
+                                            45
+                                        </div>
+                                        <div class="symbol">
+                                            Rh
+                                        </div>
+                                        <div class="element">
+                                            Rhodium
+                                        </div>
+                                    </td>
+                                    <td id="Pd" class="transition-metal" onclick="dynamicDisplay('Pd')">
+                                        <div class="number">
+                                            46
+                                        </div>
+                                        <div class="symbol">
+                                            Pd
+                                        </div>
+                                        <div class="element">
+                                            Palladium
+                                        </div>
+                                    </td>
+                                    <td id="Ag" class="transition-metal" onclick="dynamicDisplay('Ag')">
+                                        <div class="number">
+                                            47
+                                        </div>
+                                        <div class="symbol">
+                                            Ag
+                                        </div>
+                                        <div class="element">
+                                            Silver
+                                        </div>
+                                    </td>
+                                    <td id="Cd" class="transition-metal" onclick="dynamicDisplay('Cd')">
+                                        <div class="number">
+                                            48
+                                        </div>
+                                        <div class="symbol">
+                                            Cd
+                                        </div>
+                                        <div class="element">
+                                            Cadmium
+                                        </div>
+                                    </td>
+                                    <td id="In" class="other-metal" onclick="dynamicDisplay('In')">
+                                        <div class="number">
+                                            49
+                                        </div>
+                                        <div class="symbol">
+                                            In
+                                        </div>
+                                        <div class="element">
+                                            Indium
+                                        </div>
+                                    </td>
+                                    <td id="Sn" class="other-metal" onclick="dynamicDisplay('Sn')">
+                                        <div class="number">
+                                            50
+                                        </div>
+                                        <div class="symbol">
+                                            Sn
+                                        </div>
+                                        <div class="element">
+                                            Tin
+                                        </div>
+                                    </td>
+                                    <td id="Sb" class="other-metal" onclick="dynamicDisplay('Sb')">
+                                        <div class="number">
+                                            51
+                                        </div>
+                                        <div class="symbol">
+                                            Sb
+                                        </div>
+                                        <div class="element">
+                                            Antimony
+                                        </div>
+                                    </td>
+                                    <td id="Te" class="non-metal" onclick="dynamicDisplay('Te')">
+                                        <div class="number">
+                                            52
+                                        </div>
+                                        <div class="symbol">
+                                            Te
+                                        </div>
+                                        <div class="element">
+                                            Tellurium
+                                        </div>
+                                    </td>
+                                    <td id="I" class="halogen" onclick="dynamicDisplay('I')">
+                                        <div class="number">
+                                            53
+                                        </div>
+                                        <div class="symbol">
+                                            I
+                                        </div>
+                                        <div class="element">
+                                            Iodine
+                                        </div>
+                                    </td>
+                                    <td id="Xe" class="noble-gas" onclick="dynamicDisplay('Xe')">
+                                        <div class="number">
+                                            54
+                                        </div>
+                                        <div class="symbol">
+                                            Xe
+                                        </div>
+                                        <div class="element">
+                                            Xenon
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td id="Cs" class="alkali" onclick="dynamicDisplay('Cs')">
+                                        <div class="number">
+                                            55
+                                        </div>
+                                        <div class="symbol">
+                                            Cs
+                                        </div>
+                                        <div class="element">
+                                            Cesium
+                                        </div>
+                                    </td>
+                                    <td id="Ba" class="alkaline" onclick="dynamicDisplay('Ba')">
+                                        <div class="number">
+                                            56
+                                        </div>
+                                        <div class="symbol">
+                                            Ba
+                                        </div>
+                                        <div class="element">
+                                            Barium
+                                        </div>
+                                    </td>
+                                    <td id="Lu" class="lanthanide" onclick="dynamicDisplay('Lu')">
+                                        <div class="number">
+                                            71
+                                        </div>
+                                        <div class="symbol">
+                                            Lu
+                                        </div>
+                                        <div class="element">
+                                            Lutetium
+                                        </div>
+                                    </td>
+                                    <td id="Hf" class="transition-metal" onclick="dynamicDisplay('Hf')">
+                                        <div class="number">
+                                            72
+                                        </div>
+                                        <div class="symbol">
+                                            Hf
+                                        </div>
+                                        <div class="element">
+                                            Hafnium
+                                        </div>
+                                    </td>
+                                    <td id="Ta" class="transition-metal" onclick="dynamicDisplay('Ta')">
+                                        <div class="number">
+                                            73
+                                        </div>
+                                        <div class="symbol">
+                                            Ta
+                                        </div>
+                                        <div class="element">
+                                            Tantalum
+                                        </div>
+                                    </td>
+                                    <td id="W" class="transition-metal" onclick="dynamicDisplay('W')">
+                                        <div class="number">
+                                            74
+                                        </div>
+                                        <div class="symbol">
+                                            W
+                                        </div>
+                                        <div class="element">
+                                            Tungsten
+                                        </div>
+                                    </td>
+                                    <td id="Re" class="transition-metal" onclick="dynamicDisplay('Re')">
+                                        <div class="number">
+                                            75
+                                        </div>
+                                        <div class="symbol">
+                                            Re
+                                        </div>
+                                        <div class="element">
+                                            Rhenium
+                                        </div>
+                                    </td>
+                                    <td id="Os" class="transition-metal" onclick="dynamicDisplay('Os')">
+                                        <div class="number">
+                                            76
+                                        </div>
+                                        <div class="symbol">
+                                            Os
+                                        </div>
+                                        <div class="element">
+                                            Osmium
+                                        </div>
+                                    </td>
+                                    <td id="Ir" class="transition-metal" onclick="dynamicDisplay('Ir')">
+                                        <div class="number">
+                                            77
+                                        </div>
+                                        <div class="symbol">
+                                            Ir
+                                        </div>
+                                        <div class="element">
+                                            Iridium
+                                        </div>
+                                    </td>
+                                    <td id="Pt" class="transition-metal" onclick="dynamicDisplay('Pt')">
+                                        <div class="number">
+                                            78
+                                        </div>
+                                        <div class="symbol">
+                                            Pt
+                                        </div>
+                                        <div class="element">
+                                            Platinum
+                                        </div>
+                                    </td>
+                                    <td id="Au" class="transition-metal" onclick="dynamicDisplay('Au')">
+                                        <div class="number">
+                                            79
+                                        </div>
+                                        <div class="symbol">
+                                            Au
+                                        </div>
+                                        <div class="element">
+                                            Gold
+                                        </div>
+                                    </td>
+                                    <td id="Hg" class="transition-metal" onclick="dynamicDisplay('Hg')">
+                                        <div class="number">
+                                            80
+                                        </div>
+                                        <div class="symbol">
+                                            Hg
+                                        </div>
+                                        <div class="element">
+                                            Mercury
+                                        </div>
+                                    </td>
+                                    <td id="Tl" class="other-metal" onclick="dynamicDisplay('Tl')">
+                                        <div class="number">
+                                            81
+                                        </div>
+                                        <div class="symbol">
+                                            Tl
+                                        </div>
+                                        <div class="element">
+                                            Thallium
+                                        </div>
+                                    </td>
+                                    <td id="Pb" class="other-metal" onclick="dynamicDisplay('Pb')">
+                                        <div class="number">
+                                            82
+                                        </div>
+                                        <div class="symbol">
+                                            Pb
+                                        </div>
+                                        <div class="element">
+                                            Lead
+                                        </div>
+                                    </td>
+                                    <td id="Bi" class="other-metal" onclick="dynamicDisplay('Bi')">
+                                        <div class="number">
+                                            83
+                                        </div>
+                                        <div class="symbol">
+                                            Bi
+                                        </div>
+                                        <div class="element">
+                                            Bismuth
+                                        </div>
+                                    </td>
+                                    <td id="Po" class="other-metal" onclick="dynamicDisplay('Po')">
+                                        <div class="number">
+                                            84
+                                        </div>
+                                        <div class="symbol">
+                                            Po
+                                        </div>
+                                        <div class="element">
+                                            Polonium
+                                        </div>
+                                    </td>
+                                    <td id="At" class="halogen" onclick="dynamicDisplay('At')">
+                                        <div class="number">
+                                            85
+                                        </div>
+                                        <div class="symbol">
+                                            At
+                                        </div>
+                                        <div class="element">
+                                            Astatine
+                                        </div>
+                                    </td>
+                                    <td id="Rn" class="noble-gas" onclick="dynamicDisplay('Rn')">
+                                        <div class="number">
+                                            86
+                                        </div>
+                                        <div class="symbol">
+                                            Rn
+                                        </div>
+                                        <div class="element">
+                                            Radon
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td id="Fr" class="alkali" onclick="dynamicDisplay('Fr')">
+                                        <div class="number">
+                                            87
+                                        </div>
+                                        <div class="symbol">
+                                            Fr
+                                        </div>
+                                        <div class="element">
+                                            Francium
+                                        </div>
+                                    </td>
+                                    <td id="Ra" class="alkaline" onclick="dynamicDisplay('Ra')">
+                                        <div class="number">
+                                            88
+                                        </div>
+                                        <div class="symbol">
+                                            Ra
+                                        </div>
+                                        <div class="element">
+                                            Radium
+                                        </div>
+                                    </td>
+                                    <td id="Lr" class="actinide" onclick="dynamicDisplay('Lr')">
+                                        <div class="number">
+                                            103
+                                        </div>
+                                        <div class="symbol">
+                                            Lr
+                                        </div>
+                                        <div class="element">
+                                            Lawrencium
+                                        </div>
+                                    </td>
+                                    <td id="Rf" class="transition-metal" onclick="dynamicDisplay('Rf')">
+                                        <div class="number">
+                                            104
+                                        </div>
+                                        <div class="symbol">
+                                            Rf
+                                        </div>
+                                        <div class="element">
+                                            Rutherfordium
+                                        </div>
+                                    </td>
+                                    <td id="Db" class="transition-metal" onclick="dynamicDisplay('Db')">
+                                        <div class="number">
+                                            105
+                                        </div>
+                                        <div class="symbol">
+                                            Db
+                                        </div>
+                                        <div class="element">
+                                            Dubnium
+                                        </div>
+                                    </td>
+                                    <td id="Sg" class="transition-metal" onclick="dynamicDisplay('Sg')">
+                                        <div class="number">
+                                            106
+                                        </div>
+                                        <div class="symbol">
+                                            Sg
+                                        </div>
+                                        <div class="element">
+                                            Seaborgium
+                                        </div>
+                                    </td>
+                                    <td id="Bh" class="transition-metal" onclick="dynamicDisplay('Bh')">
+                                        <div class="number">
+                                            107
+                                        </div>
+                                        <div class="symbol">
+                                            Bh
+                                        </div>
+                                        <div class="element">
+                                            Bohrium
+                                        </div>
+                                    </td>
+                                    <td id="Hs" class="transition-metal" onclick="dynamicDisplay('Hs')">
+                                        <div class="number">
+                                            108
+                                        </div>
+                                        <div class="symbol">
+                                            Hs
+                                        </div>
+                                        <div class="element">
+                                            Hassium
+                                        </div>
+                                    </td>
+                                    <td id="Mt" class="transition-metal" onclick="dynamicDisplay('Mt')">
+                                        <div class="number">
+                                            109
+                                        </div>
+                                        <div class="symbol">
+                                            Mt
+                                        </div>
+                                        <div class="element">
+                                            Meitnerium
+                                        </div>
+                                    </td>
+                                    <td id="Ds" class="transition-metal" onclick="dynamicDisplay('Ds')">
+                                        <div class="number">
+                                            110
+                                        </div>
+                                        <div class="symbol">
+                                            Ds
+                                        </div>
+                                        <div class="element">
+                                            Darmstadtium
+                                        </div>
+                                    </td>
+                                    <td id="Rg" class="transition-metal" onclick="dynamicDisplay('Rg')">
+                                        <div class="number">
+                                            111
+                                        </div>
+                                        <div class="symbol">
+                                            Rg
+                                        </div>
+                                        <div class="element">
+                                            Roentgenium
+                                        </div>
+                                    </td>
+                                    <td id="Cn" class="transition-metal" onclick="dynamicDisplay('Cn')">
+                                        <div class="number">
+                                            112
+                                        </div>
+                                        <div class="symbol">
+                                            Cn
+                                        </div>
+                                        <div class="element">
+                                            Copernicium
+                                        </div>
+                                    </td>
+                                    <td id="Nh" class="other-metal" onclick="dynamicDisplay('Nh')">
+                                        <div class="number">
+                                            113
+                                        </div>
+                                        <div class="symbol">
+                                            Nh
+                                        </div>
+                                        <div class="element">
+                                            Nihonium
+                                        </div>
+                                    </td>
+                                    <td id="Fl" class="other-metal" onclick="dynamicDisplay('Fl')">
+                                        <div class="number">
+                                            114
+                                        </div>
+                                        <div class="symbol">
+                                            Fl
+                                        </div>
+                                        <div class="element">
+                                            Flerovium
+                                        </div>
+                                    </td>
+                                    <td id="Mc" class="other-metal" onclick="dynamicDisplay('Mc')">
+                                        <div class="number">
+                                            115
+                                        </div>
+                                        <div class="symbol">
+                                            Mc
+                                        </div>
+                                        <div class="element">
+                                            Moscovium
+                                        </div>
+                                    </td>
+                                    <td id="Lv" class="other-metal" onclick="dynamicDisplay('Lv')">
+                                        <div class="number">
+                                            116
+                                        </div>
+                                        <div class="symbol">
+                                            Lv
+                                        </div>
+                                        <div class="element">
+                                            Livermorium
+                                        </div>
+                                    </td>
+                                    <td id="Ts" class="halogen" onclick="dynamicDisplay('Ts')">
+                                        <div class="number">
+                                            117
+                                        </div>
+                                        <div class="symbol">
+                                            Ts
+                                        </div>
+                                        <div class="element">
+                                            Tennessine
+                                        </div>
+                                    </td>
+                                    <td id="Og" class="noble-gas" onclick="dynamicDisplay('Og')">
+                                        <div class="number">
+                                            118
+                                        </div>
+                                        <div class="symbol">
+                                            Og
+                                        </div>
+                                        <div class="element">
+                                            Oganesson
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="20" class="a"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"></td>
+                                    <td id="La" class="lanthanide" onclick="dynamicDisplay('La')">
+                                        <div class="number">
+                                            57
+                                        </div>
+                                        <div class="symbol">
+                                            La
+                                        </div>
+                                        <div class="element">
+                                            Lanthanum
+                                        </div>
+                                    </td>
+                                    <td id="Ce" class="lanthanide" onclick="dynamicDisplay('Ce')">
+                                        <div class="number">
+                                            58
+                                        </div>
+                                        <div class="symbol">
+                                            Ce
+                                        </div>
+                                        <div class="element">
+                                            Cerium
+                                        </div>
+                                    </td>
+                                    <td id="Pr" class="lanthanide" onclick="dynamicDisplay('Pr')">
+                                        <div class="number">
+                                            59
+                                        </div>
+                                        <div class="symbol">
+                                            Pr
+                                        </div>
+                                        <div class="element">
+                                            Praseodymium
+                                        </div>
+                                    </td>
+                                    <td id="Nd" class="lanthanide" onclick="dynamicDisplay('Nd')">
+                                        <div class="number">
+                                            60
+                                        </div>
+                                        <div class="symbol">
+                                            Nd
+                                        </div>
+                                        <div class="element">
+                                            Neodymium
+                                        </div>
+                                    </td>
+                                    <td id="Pm" class="lanthanide" onclick="dynamicDisplay('Pm')">
+                                        <div class="number">
+                                            61
+                                        </div>
+                                        <div class="symbol">
+                                            Pm
+                                        </div>
+                                        <div class="element">
+                                            Promethium
+                                        </div>
+                                    </td>
+                                    <td id="Sm" class="lanthanide" onclick="dynamicDisplay('Sm')">
+                                        <div class="number">
+                                            62
+                                        </div>
+                                        <div class="symbol">
+                                            Sm
+                                        </div>
+                                        <div class="element">
+                                            Samarium
+                                        </div>
+                                    </td>
+                                    <td id="Eu" class="lanthanide" onclick="dynamicDisplay('Eu')">
+                                        <div class="number">
+                                            63
+                                        </div>
+                                        <div class="symbol">
+                                            Eu
+                                        </div>
+                                        <div class="element">
+                                            Europium
+                                        </div>
+                                    </td>
+                                    <td id="Gd" class="lanthanide" onclick="dynamicDisplay('Gd')">
+                                        <div class="number">
+                                            64
+                                        </div>
+                                        <div class="symbol">
+                                            Gd
+                                        </div>
+                                        <div class="element">
+                                            Gadolinium
+                                        </div>
+                                    </td>
+                                    <td id="Tb" class="lanthanide" onclick="dynamicDisplay('Tb')">
+                                        <div class="number">
+                                            65
+                                        </div>
+                                        <div class="symbol">
+                                            Tb
+                                        </div>
+                                        <div class="element">
+                                            Terbium
+                                        </div>
+                                    </td>
+                                    <td id="Dy" class="lanthanide" onclick="dynamicDisplay('Dy')">
+                                        <div class="number">
+                                            66
+                                        </div>
+                                        <div class="symbol">
+                                            Dy
+                                        </div>
+                                        <div class="element">
+                                            Dysprosium
+                                        </div>
+                                    </td>
+                                    <td id="Ho" class="lanthanide" onclick="dynamicDisplay('Ho')">
+                                        <div class="number">
+                                            67
+                                        </div>
+                                        <div class="symbol">
+                                            Ho
+                                        </div>
+                                        <div class="element">
+                                            Holmium
+                                        </div>
+                                    </td>
+                                    <td id="Er" class="lanthanide" onclick="dynamicDisplay('Er')">
+                                        <div class="number">
+                                            68
+                                        </div>
+                                        <div class="symbol">
+                                            Er
+                                        </div>
+                                        <div class="element">
+                                            Erbium
+                                        </div>
+                                    </td>
+                                    <td id="Tm" class="lanthanide" onclick="dynamicDisplay('Tm')">
+                                        <div class="number">
+                                            69
+                                        </div>
+                                        <div class="symbol">
+                                            Tm
+                                        </div>
+                                        <div class="element">
+                                            Thulium
+                                        </div>
+                                    </td>
+                                    <td id="Yb" class="lanthanide" onclick="dynamicDisplay('Yb')">
+                                        <div class="number">
+                                            70
+                                        </div>
+                                        <div class="symbol">
+                                            Yb
+                                        </div>
+                                        <div class="element">
+                                            Ytterbium
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"></td>
+                                    <td id="Ac" class="actinide" onclick="dynamicDisplay('Ac')">
+                                        <div class="number">
+                                            89
+                                        </div>
+                                        <div class="symbol">
+                                            Ac
+                                        </div>
+                                        <div class="element">
+                                            Actinium
+                                        </div>
+                                    </td>
+                                    <td id="Th" class="actinide" onclick="dynamicDisplay('Th')">
+                                        <div class="number">
+                                            90
+                                        </div>
+                                        <div class="symbol">
+                                            Th
+                                        </div>
+                                        <div class="element">
+                                            Thorium
+                                        </div>
+                                    </td>
+                                    <td id="Pa" class="actinide" onclick="dynamicDisplay('Pa')">
+                                        <div class="number">
+                                            91
+                                        </div>
+                                        <div class="symbol">
+                                            Pa
+                                        </div>
+                                        <div class="element">
+                                            Protactinium
+                                        </div>
+                                    </td>
+                                    <td id="U" class="actinide" onclick="dynamicDisplay('U')">
+                                        <div class="number">
+                                            92
+                                        </div>
+                                        <div class="symbol">
+                                            U
+                                        </div>
+                                        <div class="element">
+                                            Uranium
+                                        </div>
+                                    </td>
+                                    <td id="Np" class="actinide" onclick="dynamicDisplay('Np')">
+                                        <div class="number">
+                                            93
+                                        </div>
+                                        <div class="symbol">
+                                            Np
+                                        </div>
+                                        <div class="element">
+                                            Neptunium
+                                        </div>
+                                    </td>
+                                    <td id="Pu" class="actinide" onclick="dynamicDisplay('Pu')">
+                                        <div class="number">
+                                            94
+                                        </div>
+                                        <div class="symbol">
+                                            Pu
+                                        </div>
+                                        <div class="element">
+                                            Plutonium
+                                        </div>
+                                    </td>
+                                    <td id="Am" class="actinide" onclick="dynamicDisplay('Am')">
+                                        <div class="number">
+                                            95
+                                        </div>
+                                        <div class="symbol">
+                                            Am
+                                        </div>
+                                        <div class="element">
+                                            Americium
+                                        </div>
+                                    </td>
+                                    <td id="Cm" class="actinide" onclick="dynamicDisplay('Cm')">
+                                        <div class="number">
+                                            96
+                                        </div>
+                                        <div class="symbol">
+                                            Cm
+                                        </div>
+                                        <div class="element">
+                                            Curium
+                                        </div>
+                                    </td>
+                                    <td id="Bk" class="actinide" onclick="dynamicDisplay('Bk')">
+                                        <div class="number">
+                                            97
+                                        </div>
+                                        <div class="symbol">
+                                            Bk
+                                        </div>
+                                        <div class="element">
+                                            Berkelium
+                                        </div>
+                                    </td>
+                                    <td id="Cf" class="actinide" onclick="dynamicDisplay('Cf')">
+                                        <div class="number">
+                                            98
+                                        </div>
+                                        <div class="symbol">
+                                            Cf
+                                        </div>
+                                        <div class="element">
+                                            Californium
+                                        </div>
+                                    </td>
+                                    <td id="Es" class="actinide" onclick="dynamicDisplay('Es')">
+                                        <div class="number">
+                                            99
+                                        </div>
+                                        <div class="symbol">
+                                            Es
+                                        </div>
+                                        <div class="element">
+                                            Einsteinium
+                                        </div>
+                                    </td>
+                                    <td id="Fm" class="actinide" onclick="dynamicDisplay('Fm')">
+                                        <div class="number">
+                                            100
+                                        </div>
+                                        <div class="symbol">
+                                            Fm
+                                        </div>
+                                        <div class="element">
+                                            Fermium
+                                        </div>
+                                    </td>
+                                    <td id="Md" class="actinide" onclick="dynamicDisplay('Md')">
+                                        <div class="number">
+                                            101
+                                        </div>
+                                        <div class="symbol">
+                                            Md
+                                        </div>
+                                        <div class="element">
+                                            Mendelevium
+                                        </div>
+                                    </td>
+                                    <td id="No" class="actinide" onclick="dynamicDisplay('No')">
+                                        <div class="number">
+                                            102
+                                        </div>
+                                        <div class="symbol">
+                                            No
+                                        </div>
+                                        <div class="element">
+                                            Nobelium
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+            </table>
+        </div>
+        <footer>
+            <div>
+                <span id="about">About</span>
+                <span id="contact">Contact</span>
+            </div>
+        </footer>
+        <main id="swup" class="transition-fade">
+            
+        </main>
+        <script src="../js/intro_animation_1.js"></script>
+        <script src="../js/main.js"></script>
+    </body>
+</html>
