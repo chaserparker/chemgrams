@@ -19,6 +19,6 @@ window.onload = function typeWriter() {
     setTimeout(typeWriter, speed);
   }
   else {
-    setTimeout(turnOff, 600);
+    setTimeout(turnOff, 625);
   }
 }

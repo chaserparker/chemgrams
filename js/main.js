@@ -26,6 +26,8 @@ const dynamic_spell_input = document.getElementById("dynamic-spell");
 const enter_input = document.getElementById("enter");
 const random_input = document.getElementById("random");
 
+var changeToDouble = true;
+
 
 function keepLettersOnly(word) {
     let newWord = "";
@@ -597,7 +599,7 @@ function displaySpelling(text) {
                     var learnMore = document.getElementById("learn-more");
                     if (learnMore.hasChildNodes()) {
                         while (learnMore.hasChildNodes()) {
-                            learnMore.removeChild(learnMore.firstChild)
+                            learnMore.removeChild(andMore.firstChild)
                         }
                     }
                     var learnMore1 = document.createElement("span");
@@ -685,6 +687,44 @@ function displaySpellingMulti(text, fromDynamic) {
             div.style.marginBottom = "25px";
             parent.appendChild(div);
             displaySpelling(text_array[i], false);
+        }
+        var imgdiv = document.createElement("div");
+        var img = document.createElement("img");
+        img.style.marginTop = "20px";
+        if (text.toString().toLowerCase() === "motherfucker") {
+            img.src = "../images/motherfucker.jpg";
+            imgdiv.appendChild(img);
+            parent.appendChild(imgdiv);
+        }
+        if (text.toString().toLowerCase() === "kirby") {
+            img.src = "../images/kirby.png";
+            imgdiv.appendChild(img);
+            parent.appendChild(imgdiv);
+        }
+        if (text.toString().toLowerCase() === "thicc") {
+            img.src = "../images/thicc.png";
+            imgdiv.appendChild(img);
+            parent.appendChild(imgdiv);
+        }
+        if (text.toString().toLowerCase() === "whore") {
+            img.src = "../images/whore.jpg";
+            imgdiv.appendChild(img);
+            parent.appendChild(imgdiv);
+        }
+        if (text.toString().toLowerCase() === "vibe check") {
+            img.src = "../images/vibe-check.jpg";
+            imgdiv.appendChild(img);
+            parent.appendChild(imgdiv);
+        }
+        if (text.toString().toLowerCase() === "pikachu") {
+            img.src = "../images/pikachu.png";
+            imgdiv.appendChild(img);
+            parent.appendChild(imgdiv);
+        }
+        if (text.toString().toLowerCase() === "chemgrams") {
+            img.src = "../images/chemgrams.jpg";
+            imgdiv.appendChild(img);
+            parent.appendChild(imgdiv);
         }
     }
 
