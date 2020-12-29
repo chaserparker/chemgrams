@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="UTF-8">
         <meta name="description" content="Use elements from the periodic table to spell words and phrases. p.s. u cute">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
         <title>ChemGrams</title>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Numans&display=swap');
@@ -15,19 +16,24 @@
     <body>
         <div id="myModal" class="modal">
             <div class="modal-content">
-              <span class="close">&times;</span>
-              <div id="data-block" class="block">
-                <div class="graph">Test</div>
-                  <div class="graph-info">Sulfur (S) is the most common element in the English language.</div>
-              </div>
-              <div id="word-block" class="block">
-              </div>
-              <div id="info-block" class="block">
-                  <span id="elem-info"></span>
-                  <span id="elem-picture"></span>
-              </div>
+                <span class="close">&times;</span>
+                <h1 id="element-name"></h1>
+                <div class="block">
+                    <div class="data-block">
+                        <canvas id="myChart" width="100" height="25"></canvas>
+                        <br/>
+                        <div style="text-align: center; margin: 10px; font-size: 25px">
+                            <span id="span1"></span>
+                            <span id="span2" class="highlight"></span>
+                            <span id="span3"></span>
+                            <div id="occurrences" style="color: #FFAA20"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="word-block" class="block"></div>
+                <div id="learn-more"></div>
             </div>
-          </div>
+        </div>
         <div id="display-spell"></div>
         <div class="introduction-animation">
             <div class="intro" id="intro"></div>
@@ -1420,9 +1426,6 @@
                 <span id="contact">Contact</span>
             </div>
         </footer>
-        <main id="swup" class="transition-fade">
-            
-        </main>
         <script src="../js/intro_animation_1.js"></script>
         <script src="../js/main.js"></script>
     </body>
