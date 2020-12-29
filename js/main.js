@@ -1,4 +1,4 @@
-const NAMES = ['Hydrogen', 'Helium', 'Lithium', 'Beryllium', 'Boron', 'Carbon', 'Nitrogen', 'Oxygen', 'Fluorine', 'Neon', 'Sodium', 'Magnesium', 'Aluminium', 'Silicon', 'Phosphorus', 'Sulfur', 'Chlorine', 'Argon', 'Potassium', 'Calcium', 'Scandium', 'Titanium', 'Vanadium', 'Chromium', 'Manganese', 'Iron', 'Cobalt', 'Nickel', 'Copper', 'Zinc', 'Gallium', 'Germanium', 'Arsenic', 'Selenium', 'Bromine', 'Krypton', 'Rubidium', 'Strontium', 'Yttrium', 'Zirconium', 'Niobium', 'Molybdenum', 'Technetium', 'Ruthenium', 'Rhodium', 'Palladium', 'Silver', 'Cadmium', 'Indium', 'Tin', 'Antimony', 'Tellurium', 'Iodine', 'Xenon', 'Caesium', 'Barium', 'Lanthanum', 'Cerium', 'Praseodymium', 'Neodymium', 'Promethium', 'Samarium', 'Europium', 'Gadolinium', 'Terbium', 'Dysprosium', 'Holmium', 'Erbium', 'Thulium', 'Ytterbium', 'Lutetium', 'Hafnium', 'Tantalum', 'Tungsten', 'Rhenium', 'Osmium', 'Iridium', 'Platinum', 'Gold', 'Mercury', 'Thallium', 'Lead', 'Bismuth', 'Polonium', 'Astatine', 'Radon', 'Francium', 'Radium', 'Actinium', 'Thorium', 'Protactinium', 'Uranium', 'Neptunium', 'Plutonium', 'Americium', 'Curium', 'Berkelium', 'Californium', 'Einsteinium', 'Fermium', 'Mendelevium', 'Nobelium', 'Lawrencium', 'Rutherfordium', 'Dubnium', 'Seaborgium', 'Bohrium', 'Hassium', 'Meitnerium', 'Darmstadtium', 'Roentgenium', 'Copernicium', 'Nihonium', 'Flerovium', 'Moscovium', 'Livermorium', 'Tennessine', 'Oganesson'];
+const NAMES = ['Hydrogen', 'Helium', 'Lithium', 'Beryllium', 'Boron', 'Carbon', 'Nitrogen', 'Oxygen', 'Fluorine', 'Neon', 'Sodium', 'Magnesium', 'Aluminum', 'Silicon', 'Phosphorus', 'Sulfur', 'Chlorine', 'Argon', 'Potassium', 'Calcium', 'Scandium', 'Titanium', 'Vanadium', 'Chromium', 'Manganese', 'Iron', 'Cobalt', 'Nickel', 'Copper', 'Zinc', 'Gallium', 'Germanium', 'Arsenic', 'Selenium', 'Bromine', 'Krypton', 'Rubidium', 'Strontium', 'Yttrium', 'Zirconium', 'Niobium', 'Molybdenum', 'Technetium', 'Ruthenium', 'Rhodium', 'Palladium', 'Silver', 'Cadmium', 'Indium', 'Tin', 'Antimony', 'Tellurium', 'Iodine', 'Xenon', 'Cesium', 'Barium', 'Lanthanum', 'Cerium', 'Praseodymium', 'Neodymium', 'Promethium', 'Samarium', 'Europium', 'Gadolinium', 'Terbium', 'Dysprosium', 'Holmium', 'Erbium', 'Thulium', 'Ytterbium', 'Lutetium', 'Hafnium', 'Tantalum', 'Tungsten', 'Rhenium', 'Osmium', 'Iridium', 'Platinum', 'Gold', 'Mercury', 'Thallium', 'Lead', 'Bismuth', 'Polonium', 'Astatine', 'Radon', 'Francium', 'Radium', 'Actinium', 'Thorium', 'Protactinium', 'Uranium', 'Neptunium', 'Plutonium', 'Americium', 'Curium', 'Berkelium', 'Californium', 'Einsteinium', 'Fermium', 'Mendelevium', 'Nobelium', 'Lawrencium', 'Rutherfordium', 'Dubnium', 'Seaborgium', 'Bohrium', 'Hassium', 'Meitnerium', 'Darmstadtium', 'Roentgenium', 'Copernicium', 'Nihonium', 'Flerovium', 'Moscovium', 'Livermorium', 'Tennessine', 'Oganesson'];
 const SYMBOLS = ['h', 'he', 'li', 'be', 'b', 'c', 'n', 'o', 'f', 'ne', 'na', 'mg', 'al', 'si', 'p', 's', 'cl', 'ar', 'k', 'ca', 'sc', 'ti', 'v', 'cr', 'mn', 'fe', 'co', 'ni', 'cu', 'zn', 'ga', 'ge', 'as', 'se', 'br', 'kr', 'rb', 'sr', 'y', 'zr', 'nb', 'mo', 'tc', 'ru', 'rh', 'pd', 'ag', 'cd', 'in', 'sn', 'sb', 'te', 'i', 'xe', 'cs', 'ba', 'la', 'ce', 'pr', 'nd', 'pm', 'sm', 'eu', 'gd', 'tb', 'dy', 'ho', 'er', 'tm', 'yb', 'lu', 'hf', 'ta', 'w', 're', 'os', 'ir', 'pt', 'au', 'hg', 'tl', 'pb', 'bi', 'po', 'at', 'rn', 'fr', 'ra', 'ac', 'th', 'pa', 'u', 'np', 'pu', 'am', 'cm', 'bk', 'cf', 'es', 'fm', 'md', 'no', 'lr', 'rf', 'db', 'sg', 'bh', 'hs', 'mt', 'ds', 'rg', 'cn', 'nh', 'fl', 'mc', 'lv', 'ts', 'og'];
 const SPECIAL_NAMES = ['Angstrom', 'Deuterium', 'electron', 'gluon', 'Joule', 'lepton', 'mass', 'quark', 'Resistance', 'Tritium', 'X-ray', 'Z-boson'];
 const SPECIAL_SYMBOLS = ['A', 'D', 'e', 'g', 'J', 'l', 'm', 'q', 'R', 'T', 'X', 'Z'];
@@ -12,7 +12,10 @@ const OTHER_METAL = ['al', 'ga', 'ge', 'in', 'sn', 'sb', 'tl', 'pb', 'bi', 'po',
 const TRANSITION_METAL = ['sc', 'ti', 'v', 'cr', 'mn', 'fe', 'co', 'ni', 'cu', 'zn', 'y', 'zr', 'nb', 'mo', 'tc', 'ru', 'rh', 'pd', 'ag', 'cd', 'hf', 'ta', 'w', 're', 'os', 'ir', 'pt', 'au', 'hg', 'rf', 'db', 'sg', 'bh', 'hs', 'mt', 'ds', 'rg', 'cn']
 const NON_METAL = ['h', 'b', 'c', 'n', 'o', 'si', 'p', 's', 'as', 'se', 'te'];
 const ORDER = ["Zn", "Cf", "Fm", "Bk", "Cm", "Zr", "Mg", "Cd", "Sr", "Pm", "Sg", "Cs", "Md", "Hf", "Lr", "Hg", "Mt", "Mc", "Hs", "Pd", "Gd", "Bh", "Tm", "Pb", "Db", "Cn", "Kr", "Sb", "Yb", "Nh", "Tb", "Rf", "Nb", "Lv", "Mn", "Rh", "Rb", "Xe", "Np", "Fr", "Rg", "Eu", "Dy", "Pt", "Tc", "Fl", "Fe", "Cl", "Br", "Tl", "Pu", "Au", "Rn", "Sn", "Ir", "Ba", "Ds", "Cr", "Be", "Og", "Ga", "Ru", "Sc", "Pa", "Os", "Ag", "Lu", "Cu", "Na", "Bi", "Pr", "He", "Sm", "Po", "Ts", "Ca", "Ce", "Ge", "Am", "Th", "Mo", "Ho", "Ac", "Nd", "Si", "As", "Se", "Ni", "Ne", "No", "W", "Co", "Ta", "In", "La", "Li", "At", "Ra", "V", "Ar", "Te", "K", "F", "Al", "Re", "Y", "B", "Ti", "Es", "H", "Er", "U", "P", "C", "N", "O", "I", "S"];
-const LINKS = [""]
+const LINKS = ["https://www.youtube.com/watch?v=6rdmpx39PRk", "https://www.youtube.com/watch?v=M6xZZiaLOV4", "https://www.youtube.com/watch?v=LfS10ArXTBA", "https://www.youtube.com/watch?v=qy8JyQShZRA", "https://www.youtube.com/watch?v=JzqdHkpXuy4", "https://www.youtube.com/watch?v=QuW4_bRHbUk", "https://www.youtube.com/watch?v=H8XNdqA18-M", "https://www.youtube.com/watch?v=WuG5WTId-IY", "https://www.youtube.com/watch?v=vtWp45Eewtw", "https://www.youtube.com/watch?v=wzv0pb7mzaw", "https://www.youtube.com/watch?v=7IT2I3LtlNE", "https://www.youtube.com/watch?v=FKkWdizutxI", "https://www.youtube.com/watch?v=4AhZ8503WPs", "https://www.youtube.com/watch?v=a2aWO5cL410", "https://www.youtube.com/watch?v=LSYLUat03A4", "https://www.youtube.com/watch?v=mGMR72X8V-U", "https://www.youtube.com/watch?v=BXCfBl4rmh0", "https://www.youtube.com/watch?v=N0Gw6-xMLlo", "https://www.youtube.com/watch?v=pPdevJTGAYY", "https://www.youtube.com/watch?v=V9fuY8_ffFg", "https://www.youtube.com/watch?v=KkKv5ilmRjY", "https://www.youtube.com/watch?v=MpFTQYynrc4", "https://www.youtube.com/watch?v=MbCmaQzrZoc", "https://www.youtube.com/watch?v=9NPjdDS11C4", "https://www.youtube.com/watch?v=uTVtBuY9Q-0", "https://www.youtube.com/watch?v=euQUgp5AY-Y", "https://www.youtube.com/watch?v=MWtL3pvGC68", "https://www.youtube.com/watch?v=AUmoaZn9bek", "https://www.youtube.com/watch?v=kop1sWzTK-I", "https://www.youtube.com/watch?v=99wPiMb-k0o", 
+"https://www.youtube.com/watch?v=N6ccRvKKwZQ", "https://www.youtube.com/watch?v=osrKWVknkgs", "https://www.youtube.com/watch?v=yD8Vz-mFHgI", "https://www.youtube.com/watch?v=IHrUtKjcAFE", "https://www.youtube.com/watch?v=Slt3_5upuSs", "https://www.youtube.com/watch?v=il4OOY7Zseg", "https://www.youtube.com/watch?v=0XLGopBovoI", "https://www.youtube.com/watch?v=d5ztPGrsgNQ", "https://www.youtube.com/watch?v=tTXjnQlAHAQ", "https://www.youtube.com/watch?v=gNJE2MPktvg", "https://www.youtube.com/watch?v=2ciPAsVTq6c", "https://www.youtube.com/watch?v=0cUYNaJvSbY", "https://www.youtube.com/watch?v=ud5c1TVkcnU", "https://www.youtube.com/watch?v=wl5ZYb0hDTc", "https://www.youtube.com/watch?v=PPSO5798k2I", "https://www.youtube.com/watch?v=4ALTGeqmNFM", "https://www.youtube.com/watch?v=pPd5qAb4J50", "https://www.youtube.com/watch?v=boRius1DYdQ", "https://www.youtube.com/watch?v=TviX7V-ay5I", "https://www.youtube.com/watch?v=rXZscASelkc", "https://www.youtube.com/watch?v=kcc6qNT3BoU", "https://www.youtube.com/watch?v=5ChFbVu4Mpk", "https://www.youtube.com/watch?v=JUBsJLRSM64", "https://www.youtube.com/watch?v=Ejoct_6pQ74", "https://www.youtube.com/watch?v=5aD6HwUE2c0", "https://www.youtube.com/watch?v=9srJdQU3NOo", "https://www.youtube.com/watch?v=Q21clW0s0B8", "https://www.youtube.com/watch?v=frD3126ry8o", "https://www.youtube.com/watch?v=IL06CzXF3ns", "https://www.youtube.com/watch?v=PBbl-3_R3mk", 
+"https://www.youtube.com/watch?v=HplP_MY78NQ", "https://www.youtube.com/watch?v=LpTkBg8HpvY", "https://www.youtube.com/watch?v=88YOmg_FUVo", "https://www.youtube.com/watch?v=uUo7pY38fGY", "https://www.youtube.com/watch?v=On5LjH9TQxY", "https://www.youtube.com/watch?v=hFfR_qOSa-8", "https://www.youtube.com/watch?v=HQahtzCU0BU", "https://www.youtube.com/watch?v=E-DY_RT4fJ4", "https://www.youtube.com/watch?v=CQFDIZfMPVQ", "https://www.youtube.com/watch?v=Rp7-yNvOV4I", "https://www.youtube.com/watch?v=7wrDfRnRHqI", "https://www.youtube.com/watch?v=egw79BA_0PA", "https://www.youtube.com/watch?v=51xFP1Yn3g0", "https://www.youtube.com/watch?v=_PccntqMOoI", "https://www.youtube.com/watch?v=VRccwkEmOYg", "https://www.youtube.com/watch?v=AdX-T2Vv68Y", "https://www.youtube.com/watch?v=cuovE4OQi2g", "https://www.youtube.com/watch?v=byzaoji_9kk", "https://www.youtube.com/watch?v=CTtf5s2HFkA", "https://www.youtube.com/watch?v=NtnsHtYYKf0", "https://www.youtube.com/watch?v=bK6nnyibhdk", "https://www.youtube.com/watch?v=2ERfPN5JLX8", "https://www.youtube.com/watch?v=vyIo-c7VmIM", "https://www.youtube.com/watch?v=bbr5yWwsI1o", "https://www.youtube.com/watch?v=GP8jJgzEmwE", "https://www.youtube.com/watch?v=mTuC_LrEfbU", "https://www.youtube.com/watch?v=hpYxllgfMSg", "https://www.youtube.com/watch?v=5_I6vj-lXNM", "https://www.youtube.com/watch?v=rKm0ShaJNFM", "https://www.youtube.com/watch?v=2yZGcr0mpw0", "https://www.youtube.com/watch?v=bsIMMa7iEKU", 
+"https://www.youtube.com/watch?v=B8vVZTvJNGk", "https://www.youtube.com/watch?v=1D75B0_URbE", "https://www.youtube.com/watch?v=89UNPdNtOoE", "https://www.youtube.com/watch?v=CC-L-CITg3k", "https://www.youtube.com/watch?v=sZobqPFNcwg", "https://www.youtube.com/watch?v=imXT9QwRzks", "https://www.youtube.com/watch?v=eG6HyPrTccI", "https://www.youtube.com/watch?v=-G_4nJLNXA0", "https://www.youtube.com/watch?v=SQhI52sqanA", "https://www.youtube.com/watch?v=0JlshAo8DuE", "https://www.youtube.com/watch?v=t_ZpauMxapY", "https://www.youtube.com/watch?v=_zBsnnJOkyA", "https://www.youtube.com/watch?v=dOj9ZjKnJcY", "https://www.youtube.com/watch?v=5d4VekfRnMs", "https://www.youtube.com/watch?v=UWq0djr790E", "https://www.youtube.com/watch?v=okJnQIjELY4", "https://www.youtube.com/watch?v=u4GEVxbLego", "https://www.youtube.com/watch?v=N8VR7Qscq4k", "https://www.youtube.com/watch?v=lhvMqva3-7M", "https://www.youtube.com/watch?v=MTq1hzhCF0g", "https://www.youtube.com/watch?v=QHcbQfcwegY", "https://www.youtube.com/watch?v=-HcSEKuYGM8", "https://www.youtube.com/watch?v=5L-NNFPiRog", "https://www.youtube.com/watch?v=ewQAJtbgr7w", "https://www.youtube.com/watch?v=WdbF4L_ruyM", "https://www.youtube.com/watch?v=1RGlXh9eC5E", "https://www.youtube.com/watch?v=VMv44bIBdQI"];
 ORDER.reverse();
 const FREQUENCY = [1, 2, 2, 3, 3, 3, 5, 6, 9, 12, 12, 13, 14, 16, 17, 22, 24, 25, 29, 30, 31, 43, 48, 49, 59, 60, 61, 62, 94, 115, 122, 128, 142, 166, 185, 209, 229, 236, 272, 279, 354, 397, 407, 424, 454, 502, 568, 585, 642, 648, 705, 769, 778, 789, 797, 804, 854, 868, 950, 975, 1030, 1059, 1082, 1092, 1094, 1119, 1149, 1188, 1200, 1415, 1549, 1599, 1606, 1664, 1673, 1674, 1926, 1938, 1939, 2091, 2171, 2181, 2209, 2316, 2357, 2589, 2611, 2743, 2925, 2999, 3438, 3441, 3467, 3985, 4376, 4428, 4457, 4554, 4663, 5133, 5457, 5548, 6268, 6307, 6537, 6956, 7061, 7665, 9626, 10507, 11822, 12655, 13583, 17275, 19705, 20853, 20915, 30042];
 FREQUENCY.reverse();
@@ -369,14 +372,6 @@ function displaySpelling(text) {
                         modal.style.display = "none";
                         myChart.destroy();
                     }
-
-                    // window.onclick = function(event) {
-                    //     if (event.target == modal) {
-                    //       modal.style.display = "none";
-                    //       myChart.destroy();
-                    //     }
-                    // }
-                    
                     Chart.defaults.global.defaultFontColor = 'white';
                     Chart.defaults.global.defaultFontFamily = 'Numans, sans-serif';
                     var ctx = document.getElementById('myChart').getContext('2d');
@@ -588,6 +583,11 @@ function displaySpelling(text) {
                     }
                     
                     var andMore = document.createElement("div");
+                    if (andMore.hasChildNodes()) {
+                        while (andMore.hasChildNodes()) {
+                            andMore.removeChild(andMore.firstChild)
+                        }
+                    }
                     andMore.style.fontSize = "25px";
                     andMore.style.margin = "10px";
                     andMore.innerHTML = "... and more!";
@@ -595,7 +595,25 @@ function displaySpelling(text) {
                         word_block.appendChild(andMore);
                     }
                     var learnMore = document.getElementById("learn-more");
-                    learnMore.innerHTML = "Click here to learn more about " + element + "!";
+                    if (learnMore.hasChildNodes()) {
+                        while (learnMore.hasChildNodes()) {
+                            learnMore.removeChild(learnMore.firstChild)
+                        }
+                    }
+                    var learnMore1 = document.createElement("span");
+                    learnMore1.innerHTML = "Click ";
+                    var learnMoreLink = document.createElement("a");
+                    learnMoreLink.innerHTML = "here";
+                    learnMoreLink.style.color = "#70E1FF";
+                    learnMoreLink.style.fontWeight = "bold";
+                    learnMoreLink.style.textDecoration = "none";
+                    learnMoreLink.href = LINKS[number - 1];
+                    learnMoreLink.target = "_blank";
+                    var learnMore2 = document.createElement("span");
+                    learnMore2.innerHTML = " to learn more about " + element + "!";
+                    learnMore.appendChild(learnMore1);
+                    learnMore.appendChild(learnMoreLink);
+                    learnMore.appendChild(learnMore2);
                 }
             }
             if (isPerfect) {

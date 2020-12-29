@@ -683,3 +683,8 @@ footer {
     font-family: 'Numans', sans-serif;
     background: black;
 }
+
+.link-to-vid {
+    text-align: center;
+    font-size: 35px;
+}
