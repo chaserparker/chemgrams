@@ -693,36 +693,43 @@ function displaySpellingMulti(text, fromDynamic) {
         img.style.marginTop = "20px";
         if (text.toString().toLowerCase() === "motherfucker") {
             img.src = "../images/motherfucker.jpg";
+            img.alt = "motherfucker";
             imgdiv.appendChild(img);
             parent.appendChild(imgdiv);
         }
         if (text.toString().toLowerCase() === "kirby") {
             img.src = "../images/kirby.png";
+            img.alt = "kirby";
             imgdiv.appendChild(img);
             parent.appendChild(imgdiv);
         }
         if (text.toString().toLowerCase() === "thicc") {
             img.src = "../images/thicc.png";
+            img.alt = "thicc";
             imgdiv.appendChild(img);
             parent.appendChild(imgdiv);
         }
         if (text.toString().toLowerCase() === "whore") {
             img.src = "../images/whore.jpg";
+            img.alt = "whore";
             imgdiv.appendChild(img);
             parent.appendChild(imgdiv);
         }
         if (text.toString().toLowerCase() === "vibe check") {
             img.src = "../images/vibe-check.jpg";
+            img.alt = "vibe check";
             imgdiv.appendChild(img);
             parent.appendChild(imgdiv);
         }
         if (text.toString().toLowerCase() === "pikachu") {
             img.src = "../images/pikachu.png";
+            img.alt = "pikachu";
             imgdiv.appendChild(img);
             parent.appendChild(imgdiv);
         }
         if (text.toString().toLowerCase() === "chemgrams") {
             img.src = "../images/chemgrams.jpg";
+            img.alt = "chemgrams";
             imgdiv.appendChild(img);
             parent.appendChild(imgdiv);
         }
