@@ -7,12 +7,14 @@ split_animation.style.fontFamily = "Numans, sans-serif";
 const reveal_logo = document.getElementById("reveal-logo");
 reveal_logo.style.fontFamily = "Numans, sans-serif";
 const fade_out = document.getElementById("fade-out");
+const footer = document.getElementById("footer");
 
 function unsetObjects() {
   typing_animation.style.zIndex = "-10000";
   split_animation.style.zIndex = "-10000";
   reveal_logo.style.zIndex = "-10000";
   fade_out.style.zIndex = "-10000";
+  footer.style.opacity = "100";
 }
 
 function typeWriter(callback = split) {

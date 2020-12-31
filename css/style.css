@@ -3,6 +3,24 @@ html, body {
     color: white;
 }
 
+footer {
+    opacity: 0;
+    font-size: 1.5vw;
+    margin-top: 4vw;
+    color: #70E1FF;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 90%;
+    margin: 20px auto;
+  }
+
 .intro-center {
     position: absolute;
     font-size: 4vw;

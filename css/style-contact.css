@@ -13,3 +13,12 @@ html, body {
     margin-left: 18.5%;
     font-size: 22px;
 }
+
+img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 50%;
+    max-height: 45%;
+    margin: 20px auto;
+  }
