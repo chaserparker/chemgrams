@@ -253,7 +253,7 @@ function returnInfo(chemspelling) {
 function returnPerfects(symbol) {
     var allPerfects = [];
     var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", "../other/perfect_words.txt", false);
+    rawFile.open("GET", "other/perfect_words.txt", false);
     rawFile.onreadystatechange = function ()
     {
         if(rawFile.readyState === 4)
@@ -712,35 +712,35 @@ function displaySpellingMulti(text, fromDynamic) {
         var img = document.createElement("img");
         img.style.marginTop = "1.5vw";
         if (text.toString().toLowerCase() === "motherfucker") {
-            img.src = "../images/motherfucker.jpg";
+            img.src = "images/motherfucker.jpg";
             img.alt = "motherfucker";
         }
         if (text.toString().toLowerCase() === "kirby") {
-            img.src = "../images/kirby.png";
+            img.src = "images/kirby.png";
             img.alt = "kirby";
         }
         if (text.toString().toLowerCase() === "thicc") {
-            img.src = "../images/thicc.jpg";
+            img.src = "images/thicc.jpg";
             img.alt = "thicc";
         }
         if (text.toString().toLowerCase() === "whore") {
-            img.src = "../images/whore.jpg";
+            img.src = "images/whore.jpg";
             img.alt = "whore";
         }
         if (text.toString().toLowerCase() === "vibe check") {
-            img.src = "../images/vibe-check.jpg";
+            img.src = "images/vibe-check.jpg";
             img.alt = "vibe check";
         }
         if (text.toString().toLowerCase() === "pikachu") {
-            img.src = "../images/pikachu.png";
+            img.src = "images/pikachu.png";
             img.alt = "pikachu";
         }
         if (text.toString().toLowerCase() === "chemgrams") {
-            img.src = "../images/chemgrams.jpg";
+            img.src = "images/chemgrams.jpg";
             img.alt = "chemgrams";
         }
         if (text.toString().toLowerCase() === "bitch") {
-            img.src = "../images/bitch.jpg";
+            img.src = "images/bitch.jpg";
             img.alt = "chemgrams";
         }
         imgdiv.appendChild(img);
@@ -761,7 +761,7 @@ function expand_retract(arg) {
 function returnRandom() {
     var randomWord;
     var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", "../other/perfect_words.txt", false);
+    rawFile.open("GET", "other/perfect_words.txt", false);
     rawFile.onreadystatechange = function ()
     {
         if(rawFile.readyState === 4)
