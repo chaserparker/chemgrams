@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html translate="no">
     <head>
         <link rel="stylesheet" href="../css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +15,12 @@
     </head>
 
     <body>
+        <div id="intro-animation">
+            <div id="fade-out" class="cover-screen"></div>
+            <div id="typing-animation" class="intro-center"></div>
+            <div id="split-animation" class="intro-center"></div>
+            <div id="reveal-logo" class="logo-center"></div>
+        </div>
         <div id="myModal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
@@ -23,7 +29,7 @@
                     <div class="data-block">
                         <canvas id="myChart" width="100" height="25"></canvas>
                         <br/>
-                        <div style="text-align: center; margin: 10px; font-size: 25px">
+                        <div style="text-align: center; margin: 1vw; font-size: 2vw">
                             <span id="span1"></span>
                             <span id="span2" class="highlight"></span>
                             <span id="span3"></span>
@@ -36,52 +42,6 @@
             </div>
         </div>
         <div id="display-spell"></div>
-        <div class="introduction-animation">
-            <div class="intro" id="intro"></div>
-            <div class= "intro_text" id="intro_text"></div>
-            <div class="rainbow-elements">
-                <div class="intro-c">
-                    <div class="intro-number">6</div>
-                    <div class="intro-symbol">C</div>
-                    <div class="intro-element">Carbon</div>
-                </div>
-                <div class="intro-he">
-                    <div class="intro-number">2</div>
-                    <div class="intro-symbol">He</div>
-                    <div class="intro-element">Helium</div>
-                </div>
-                <div class="intro-mg">
-                    <div class="intro-number">12</div>
-                    <div class="intro-symbol">Mg</div>
-                    <div class="intro-element">Magnesium</div>
-                </div>
-                <div class="intro-ra">
-                    <div class="intro-number">88</div>
-                    <div class="intro-symbol">Ra</div>
-                    <div class="intro-element">Radium</div>
-                </div>
-                <div class="intro-m">
-                    <div class="intro-number">-</div>
-                    <div class="intro-symbol">m</div>
-                    <div class="intro-element">mass</div>
-                </div>
-                <div class="intro-s">
-                    <div class="intro-number">16</div>
-                    <div class="intro-symbol">S</div>
-                    <div class="intro-element">Sulfur</div>
-                </div>
-            </div>
-            <div class="entry-message-position">
-                <div class="intro_split">
-                    <span>C</span>
-                    <span>he</span>
-                    <span>mG</span>
-                    <span>ra</span>
-                    <span>m</span>
-                    <span>s</span>
-                </div>
-            </div>
-        </div>
         <div class="entry-bar">
             <span class="form__group field">
                 <input class="form__field" placeholder="Message" id='dynamic-spell' autocomplete="off">
@@ -105,7 +65,6 @@
                                         <div class="element">
                                             Hydrogen
                                         </div>
-                                    </td>
                                     <td colspan="16"></td>
                                     <td id="He" class="noble-gas" onclick="dynamicDisplay('He')">
                                         <div class="number">
@@ -1421,15 +1380,6 @@
                             </tbody>
             </table>
         </div>
-        <footer>
-            <br/>
-            <p>
-                <img src="../images/logo.png" width="450" height="74" alt="Logo">
-            </p>
-            <div style="text-align: center">
-                <a id="contact" href="../html/contact.html">Contact</a>
-            </div>
-        </footer>
         <script src="../js/intro_animation_1.js"></script>
         <script src="../js/main.js"></script>
     </body>

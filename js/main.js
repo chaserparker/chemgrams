@@ -115,86 +115,86 @@ function dynamic_chemspell(entry) {
         var val = id.id;
         if (entry.includes(val)) {
             if (ALKALI.includes(val.toString().toLowerCase())) {
-                id.style.border =  "3px solid #7e2525";
+                id.style.border =  "0.2vw solid #7e2525";
                 id.style.background = "#7e2525";
                 id.style.transition = "0.3s";
             }
             if (ALKALINE.includes(val.toString().toLowerCase())) {
-                id.style.border =  "3px solid #7a4205";
+                id.style.border =  "0.2vw solid #7a4205";
                 id.style.background = "#7a4205";
                 id.style.transition = "0.3s";
             }
             if (HALOGEN.includes(val.toString().toLowerCase())) {
-                id.style.border =  "3px solid #796900";
+                id.style.border =  "0.2vw solid #796900";
                 id.style.background = "#796900";
                 id.style.transition = "0.3s";
             }
             if (NOBLE_GAS.includes(val.toString().toLowerCase())) {
-                id.style.border =  "3px solid #3d0e5f";
+                id.style.border =  "0.2vw solid #3d0e5f";
                 id.style.background = "#3d0e5f";
                 id.style.transition = "0.3s";
             }
             if (LANTHANIDE.includes(val.toString().toLowerCase())) {
-                id.style.border =  "3px solid #6a0888";
+                id.style.border =  "0.2vw solid #6a0888";
                 id.style.background = "#6a0888";
                 id.style.transition = "0.3s";
             }
             if (ACTINIDE.includes(val.toString().toLowerCase())) {
-                id.style.border =  "3px solid #6e1a55";
+                id.style.border =  "0.2vw solid #6e1a55";
                 id.style.background = "#6e1a55";
                 id.style.transition = "0.3s";
             }
             if (OTHER_METAL.includes(val.toString().toLowerCase())) {
-                id.style.border =  "3px solid #254e44";
+                id.style.border =  "0.2vw solid #254e44";
                 id.style.background = "#254e44";
                 id.style.transition = "0.3s";
             }
             if (TRANSITION_METAL.includes(val.toString().toLowerCase())) {
-                id.style.border =  "3px solid #102f64";
+                id.style.border =  "0.2vw solid #102f64";
                 id.style.background = "#102f64";
                 id.style.transition = "0.3s";
             }
             if (NON_METAL.includes(val.toString().toLowerCase())) {
-                id.style.border =  "3px solid #044712";
+                id.style.border =  "0.2vw solid #044712";
                 id.style.background = "#044712";
                 id.style.transition = "0.3s";
             }
         }
         else {
             if (ALKALI.includes(val.toString().toLowerCase())) {
-                id.style.border =  "3px solid #FF4E4E";
+                id.style.border =  "0.2vw solid #FF4E4E";
                 id.style.background = "#FF4E4E";
             }
             if (ALKALINE.includes(val.toString().toLowerCase())) {
-                id.style.border =  "3px solid #FFA94E";
+                id.style.border =  "0.2vw solid #FFA94E";
                 id.style.background = "#FFA94E";
             }
             if (HALOGEN.includes(val.toString().toLowerCase())) {
-                id.style.border =  "3px solid #F3D200";
+                id.style.border =  "0.2vw solid #F3D200";
                 id.style.background = "#F3D200";
             }
             if (NOBLE_GAS.includes(val.toString().toLowerCase())) {
-                id.style.border =  "3px solid #A326FF";
+                id.style.border =  "0.2vw solid #A326FF";
                 id.style.background = "#A326FF";
             }
             if (LANTHANIDE.includes(val.toString().toLowerCase())) {
-                id.style.border =  "3px solid #d23fff";
+                id.style.border =  "0.2vw solid #d23fff";
                 id.style.background = "#d23fff";
             }
             if (ACTINIDE.includes(val.toString().toLowerCase())) {
-                id.style.border =  "3px solid #ff3fc5";
+                id.style.border =  "0.2vw solid #ff3fc5";
                 id.style.background = "#ff3fc5";
             }
             if (OTHER_METAL.includes(val.toString().toLowerCase())) {
-                id.style.border =  "3px solid #61cab0";
+                id.style.border =  "0.2vw solid #61cab0";
                 id.style.background = "#61cab0";
             }
             if (TRANSITION_METAL.includes(val.toString().toLowerCase())) {
-                id.style.border =  "3px solid #2675FF";
+                id.style.border =  "0.2vw solid #2675FF";
                 id.style.background = "#2675FF";
             }
             if (NON_METAL.includes(val.toString().toLowerCase())) {
-                id.style.border =  "3px solid #0CD033";
+                id.style.border =  "0.2vw solid #0CD033";
                 id.style.background = "#0CD033";
             }
         }
@@ -291,8 +291,9 @@ function displaySpelling(text) {
         }
     }
     let allInfo = returnInfo(chemspelling);
-    parent.style.marginTop = "20px";
-    parent.style.marginBottom = "50px";
+    parent.style.marginTop = "2vw";
+    parent.style.marginBottom = "4vw";
+    parent.style.fontSize = "2vw";
     for (var i = 0; i < allInfo.length + 1; i++) {
         let span = document.createElement("span");
         span.animate ([
@@ -318,13 +319,13 @@ function displaySpelling(text) {
                 span.innerHTML = text.toString().toLowerCase();
             }
             span.style.opacity = "0";
-            span.style.marginLeft = "50px";
-            span.style.fontSize = "25px";
+            span.style.marginLeft = "4vw";
             span.style.fontFamily = "'Numans', sans-serif";
         }
         else {
             let divNumber = document.createElement("div");
             let divSymbol = document.createElement("div");
+            divSymbol.style.margin = "0.2vw 0";
             let divElement = document.createElement("div");
             let number = allInfo[i][0];
             let symbol = allInfo[i][1];
@@ -333,16 +334,16 @@ function displaySpelling(text) {
             span.style.display = "inline-block";
             span.style.position = "relative";
             span.style.textAlign = "center";
-            span.style.width = "90px";
-            span.style.height = "90px";
-            span.style.borderRadius = "0.4em";
-            span.style.border = "3px solid #A5A5A5";
+            span.style.width = "7vw";
+            span.style.height = "7vw";
+            span.style.borderRadius = "0.8vw";
+            span.style.border = "0.2vw solid #A5A5A5";
             span.style.background = "transparent";
-            span.style.margin = "5px";
+            span.style.margin = "0.4vw";
             span.style.opacity = "0";
 
             if (SYMBOLS.includes(symbol.toString().toLowerCase()) && text.length > 0) {
-                span.style.border = "3px solid #0CD033";
+                span.style.border = "0.2vw solid #0CD033";
                 span.style.cursor = "pointer";
                 span.onmouseover = function() {
                     this.style.background = "#0CD033";
@@ -356,7 +357,7 @@ function displaySpelling(text) {
                     var h1 = document.getElementById("element-name");
                     h1.innerHTML = element;
                     h1.style.textAlign = "center";
-                    h1.style.fontSize = "50px";
+                    h1.style.fontSize = "3vw";
                     h1.style.fontFamily = 'Numans, sans-serif';
 
                     if(myChart!=null){
@@ -376,7 +377,11 @@ function displaySpelling(text) {
                     }
                     Chart.defaults.global.defaultFontColor = 'white';
                     Chart.defaults.global.defaultFontFamily = 'Numans, sans-serif';
+                    var viewportWidth = document.documentElement.clientWidth;
+                    var font_size = viewportWidth * 1.5 / 100 * 0.8;
+                    console.log(font_size);
                     var ctx = document.getElementById('myChart').getContext('2d');
+                    ctx.maxHeight = 10;
                     var myChart = new Chart(ctx, {
                         type: 'bar',
                         data: {
@@ -464,21 +469,36 @@ function displaySpelling(text) {
                             }]
                         },
                         options: {
+                            responsive: true,
                             scaleShowValues: true,
+                            maintainAspectRatio: false,
                             scales: {
                                 xAxes: [{
                                 scaleLabel: {
                                     display: true,
                                     labelString: "",
-                                    fontSize: 20,
+                                    fontSize: font_size,
                                     fontColor: 'rgb(196, 196, 196)',
                                     fontWeight: "bold"
                                 },
                                 ticks: {
                                     autoSkip: false,
+                                    fontSize: font_size * 0.75
                                 }
+                                }],
+                                yAxes: [{
+                                    scaleLabel: {
+                                        display: true,
+                                        labelString: "",
+                                        fontSize: font_size,
+                                        fontColor: 'rgb(196, 196, 196)',
+                                        fontWeight: "bold"
+                                    },
+                                    ticks: {
+                                        fontSize: font_size * 0.6
+                                    }
                                 }]
-                            }
+                            },
                         }
                     });
                     if (ORDER.indexOf(symbol) < 30) {
@@ -590,8 +610,8 @@ function displaySpelling(text) {
                             andMore.removeChild(andMore.firstChild)
                         }
                     }
-                    andMore.style.fontSize = "25px";
-                    andMore.style.margin = "10px";
+                    andMore.style.fontSize = "2vw";
+                    andMore.style.margin = "1vw";
                     andMore.innerHTML = "... and more!";
                     if (hello === 100) {
                         word_block.appendChild(andMore);
@@ -599,7 +619,7 @@ function displaySpelling(text) {
                     var learnMore = document.getElementById("learn-more");
                     if (learnMore.hasChildNodes()) {
                         while (learnMore.hasChildNodes()) {
-                            learnMore.removeChild(andMore.firstChild)
+                            learnMore.removeChild(learnMore.firstChild)
                         }
                     }
                     var learnMore1 = document.createElement("span");
@@ -619,7 +639,7 @@ function displaySpelling(text) {
                 }
             }
             if (isPerfect) {
-                span.style.border = "3px solid gold";
+                span.style.border = "0.2vw solid gold";
                 span.style.cursor = "pointer";
                 span.onmouseover = function() {
                     this.style.background = "gold";
@@ -631,19 +651,19 @@ function displaySpelling(text) {
                 }
             }
             divNumber.style.position = "relative";
-            divNumber.style.fontSize = "12px";
+            divNumber.style.fontSize = "0.8vw";
             divNumber.style.top = "5%";
             divNumber.innerHTML = number;
             span.appendChild(divNumber);
 
             divSymbol.style.position = "relative";
-            divSymbol.style.fontSize = "30px";
-            divSymbol.style.top = "17.5%";
+            divSymbol.style.fontSize = "2.5vw";
+            divSymbol.style.top = "16%";
             divSymbol.innerHTML = symbol;
             span.appendChild(divSymbol);
 
             divElement.style.position = "relative";
-            divElement.style.fontSize = "12px";
+            divElement.style.fontSize = "0.8vw";
             divElement.style.top = "25%";
             divElement.innerHTML = element;
 
@@ -653,8 +673,8 @@ function displaySpelling(text) {
     }
 
     if (text.length === 0) {
-        parent.style.marginTop = "0px";
-        parent.style.marginBottom = "0px";
+        parent.style.marginTop = "0";
+        parent.style.marginBottom = "0";
         parent.style.height = "0";
     }
 }
@@ -669,9 +689,9 @@ function displaySpellingMulti(text, fromDynamic) {
     if (text.length > 0) {
         let tip = document.createElement("div");
         tip.style.textAlign = "center";
-        tip.style.marginTop = "30px";
-        tip.style.marginBottom = "20px";
-        tip.style.fontSize = "15px";
+        tip.style.marginTop = "2vw";
+        tip.style.marginBottom = "1.5vw";
+        tip.style.fontSize = "1.2vw";
         tip.style.color = "white";
         tip.innerHTML = "*Click an element to see which English words it appears in!*";
         parent.appendChild(tip);
@@ -684,55 +704,47 @@ function displaySpellingMulti(text, fromDynamic) {
         let text_array = text.split(" ");
         for (var i = 0; i < text_array.length; i++) {
             let div = document.createElement("div");
-            div.style.marginBottom = "25px";
+            div.style.marginBottom = "1.5vw";
             parent.appendChild(div);
             displaySpelling(text_array[i], false);
         }
         var imgdiv = document.createElement("div");
         var img = document.createElement("img");
-        img.style.marginTop = "20px";
+        img.style.marginTop = "1.5vw";
         if (text.toString().toLowerCase() === "motherfucker") {
             img.src = "../images/motherfucker.jpg";
             img.alt = "motherfucker";
-            imgdiv.appendChild(img);
-            parent.appendChild(imgdiv);
         }
         if (text.toString().toLowerCase() === "kirby") {
             img.src = "../images/kirby.png";
             img.alt = "kirby";
-            imgdiv.appendChild(img);
-            parent.appendChild(imgdiv);
         }
         if (text.toString().toLowerCase() === "thicc") {
-            img.src = "../images/thicc.png";
+            img.src = "../images/thicc.jpg";
             img.alt = "thicc";
-            imgdiv.appendChild(img);
-            parent.appendChild(imgdiv);
         }
         if (text.toString().toLowerCase() === "whore") {
             img.src = "../images/whore.jpg";
             img.alt = "whore";
-            imgdiv.appendChild(img);
-            parent.appendChild(imgdiv);
         }
         if (text.toString().toLowerCase() === "vibe check") {
             img.src = "../images/vibe-check.jpg";
             img.alt = "vibe check";
-            imgdiv.appendChild(img);
-            parent.appendChild(imgdiv);
         }
         if (text.toString().toLowerCase() === "pikachu") {
             img.src = "../images/pikachu.png";
             img.alt = "pikachu";
-            imgdiv.appendChild(img);
-            parent.appendChild(imgdiv);
         }
         if (text.toString().toLowerCase() === "chemgrams") {
             img.src = "../images/chemgrams.jpg";
             img.alt = "chemgrams";
-            imgdiv.appendChild(img);
-            parent.appendChild(imgdiv);
         }
+        if (text.toString().toLowerCase() === "bitch") {
+            img.src = "../images/bitch.jpg";
+            img.alt = "chemgrams";
+        }
+        imgdiv.appendChild(img);
+        parent.appendChild(imgdiv);
     }
 
 }
