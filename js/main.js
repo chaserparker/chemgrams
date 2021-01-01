@@ -287,10 +287,9 @@ function displaySpelling(text) {
     for (var i = 0; i < chemspelling.length; i++) {
         if (!SYMBOLS.includes(chemspelling[i].toString().toLowerCase())) {
             isPerfect = false;
-        }
-        if (chemspelling[i] === " ") {
-            chemspelling.splice(i, 1);
-            i--;
+            if (chemspelling[i] === " ") {
+                chemspelling.splice(i, 1);
+            }
         }
     }
     let allInfo = returnInfo(chemspelling);
@@ -311,7 +310,7 @@ function displaySpelling(text) {
         if (i === allInfo.length) {
             text = keepLettersOnly(text);
             span.style.display = "inline-block";
-            span.style.position = "relative";
+            span.style.position = "fixed";
             span.style.textAlign = "center";
             if (isPerfect && text.length > 0) {
                 span.style.color = "gold";
@@ -328,7 +327,6 @@ function displaySpelling(text) {
         else {
             let divNumber = document.createElement("div");
             let divSymbol = document.createElement("div");
-            divSymbol.style.margin = "0vw 0";
             let divElement = document.createElement("div");
             let number = allInfo[i][0];
             let symbol = allInfo[i][1];
@@ -652,24 +650,33 @@ function displaySpelling(text) {
                     this.style.transition = "0.3s";
                 }
             }
-            divNumber.style.position = "relative";
-            divNumber.style.fontSize = "0.8vw";
-            divNumber.style.top = "5%";
-            divNumber.innerHTML = number;
             span.appendChild(divNumber);
+            divNumber.style.fontSize = "0.8vw";
+            divNumber.innerHTML = number;
+            divNumber.style.position = "absolute";
+            divNumber.style.top = "5%";
+            divNumber.style.left = "50%";
+            divNumber.style.transform = "translate(-50%, -5%)";
+            divNumber.style.zIndex = "1";
 
-            divSymbol.style.position = "relative";
-            divSymbol.style.fontSize = "2.5vw";
-            divSymbol.style.top = "16%";
-            divSymbol.innerHTML = symbol;
             span.appendChild(divSymbol);
+            divSymbol.style.fontSize = "2.5vw";
+            divSymbol.innerHTML = symbol;
+            divSymbol.style.position = "absolute";
+            divSymbol.style.top = "50%";
+            divSymbol.style.left = "50%";
+            divSymbol.style.transform = "translate(-50%, -50%)";
+            divSymbol.style.zIndex = "2";
 
-            divElement.style.position = "relative";
-            divElement.style.fontSize = "0.8vw";
-            divElement.style.top = "25%";
             divElement.innerHTML = element;
-
             span.appendChild(divElement);
+            divElement.style.fontSize = "0.8vw";
+            divElement.innerHTML = element;
+            divElement.style.position = "absolute";
+            divElement.style.top = "95%";
+            divElement.style.left = "50%";
+            divElement.style.transform = "translate(-50%, -95%)";
+            divElement.style.zIndex = "3";
         }
         parent.appendChild(span);
     }
@@ -797,7 +804,6 @@ function dynamicDisplay(symbol) {
     else {
         changetoDouble = true;
         var input = chemspell(dynamic_spell_input.value);
-        console.log(input);
         for (var i = 0; i < input.length; i++) {
             if (input[i] === "( )") {
                 input.splice(i, 1);
