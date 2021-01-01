@@ -32,7 +32,7 @@ var changeToDouble = true;
 function keepLettersOnly(word) {
     let newWord = "";
     for (var i = 0; i < word.length; i++) {
-        if ((/[a-zA-Z]/).test(word[i])) {
+        if ((/[a-zA-Z]/).test(word[i]) || word[i] === " ") {
             newWord += word[i];
         }
     }
@@ -287,7 +287,9 @@ function displaySpelling(text) {
     for (var i = 0; i < chemspelling.length; i++) {
         if (!SYMBOLS.includes(chemspelling[i].toString().toLowerCase())) {
             isPerfect = false;
-            break;
+        }
+        if (chemspelling[i] === " ") {
+            chemspelling.splice(i, 1);
         }
     }
     let allInfo = returnInfo(chemspelling);
@@ -325,7 +327,7 @@ function displaySpelling(text) {
         else {
             let divNumber = document.createElement("div");
             let divSymbol = document.createElement("div");
-            divSymbol.style.margin = "0.2vw 0";
+            divSymbol.style.margin = "0vw 0";
             let divElement = document.createElement("div");
             let number = allInfo[i][0];
             let symbol = allInfo[i][1];
@@ -379,7 +381,6 @@ function displaySpelling(text) {
                     Chart.defaults.global.defaultFontFamily = 'Numans, sans-serif';
                     var viewportWidth = document.documentElement.clientWidth;
                     var font_size = viewportWidth * 1.5 / 100 * 0.8;
-                    console.log(font_size);
                     var ctx = document.getElementById('myChart').getContext('2d');
                     ctx.maxHeight = 10;
                     var myChart = new Chart(ctx, {
@@ -715,10 +716,6 @@ function displaySpellingMulti(text, fromDynamic) {
             img.src = "images/motherfucker.jpg";
             img.alt = "motherfucker";
         }
-        if (text.toString().toLowerCase() === "kirby") {
-            img.src = "images/kirby.png";
-            img.alt = "kirby";
-        }
         if (text.toString().toLowerCase() === "thicc") {
             img.src = "images/thicc.jpg";
             img.alt = "thicc";
@@ -731,17 +728,17 @@ function displaySpellingMulti(text, fromDynamic) {
             img.src = "images/vibe-check.jpg";
             img.alt = "vibe check";
         }
-        if (text.toString().toLowerCase() === "pikachu") {
-            img.src = "images/pikachu.png";
-            img.alt = "pikachu";
-        }
         if (text.toString().toLowerCase() === "chemgrams") {
             img.src = "images/chemgrams.jpg";
             img.alt = "chemgrams";
         }
         if (text.toString().toLowerCase() === "bitch") {
             img.src = "images/bitch.jpg";
-            img.alt = "chemgrams";
+            img.alt = "bitch";
+        }
+        if (text.toString().toLowerCase() === "vsauce") {
+            img.src = "images/vsauce.jpg";
+            img.alt = "vsauce";
         }
         imgdiv.appendChild(img);
         parent.appendChild(imgdiv);
