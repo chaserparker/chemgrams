@@ -290,6 +290,7 @@ function displaySpelling(text) {
         }
         if (chemspelling[i] === " ") {
             chemspelling.splice(i, 1);
+            i--;
         }
     }
     let allInfo = returnInfo(chemspelling);
@@ -795,8 +796,16 @@ function dynamicDisplay(symbol) {
     }
     else {
         changetoDouble = true;
-        displaySpellingMulti(chemspell(dynamic_spell_input.value), fromDynamic = true);
-        dynamic_chemspell(chemspell(dynamic_spell_input.value));
+        var input = chemspell(dynamic_spell_input.value);
+        console.log(input);
+        for (var i = 0; i < input.length; i++) {
+            if (input[i] === "( )") {
+                input.splice(i, 1);
+                i--;
+            }
+        }
+        displaySpellingMulti(input, fromDynamic = true);
+        dynamic_chemspell(input);
     }
     changeToDouble = true;
 }
